@@ -1,0 +1,41 @@
+doctype html
+html(lang='en')
+  head
+    include header
+    title Bootstrap Example
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+  body(onload='fetchData()')
+    .container
+      .header.clearfix 
+        form#myform
+          .form-group
+            label Site Name
+            input.form-control#siteName(type='text', placeholder='Website name')
+          .form-group
+            label Site URL
+            input.form-control#siteURL(type='text', placeholder='Website URL')
+          .form-group
+            label Site Password
+            input.form-control#sitePassword(type='password', placeholder='Website URL')
+          button.btn.btn-primary(type='submit') Submit
+
+    .container
+      h2 SAFE
+      p Keep your password safe
+      table.table.table-hover
+        thead
+          tr
+            th Sitename
+            th Password
+      .row.marketing
+        .col-lg-6
+          #dataResults
+      footer.footer
+      p © 2017 FURYOO7.
+
+  script(src='/javascripts/profile.js')
+
