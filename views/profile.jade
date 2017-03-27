@@ -8,7 +8,7 @@ html(lang='en')
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
-  body(onload='fetchData()')
+  body
     .container
       .header.clearfix 
         form#myform
@@ -30,7 +30,19 @@ html(lang='en')
         thead
           tr
             th Sitename
+            th SiteURL
             th Password
+        tbody#userdata
+          each data in userdata
+            tr(id=data._id)
+              td.name #{data.siteName}
+              td.URL #{data.siteUrl}
+              td.pass #{data.sitePassword}
+              td
+                a.btn.btn-default(target='_blank', href="//#{data.siteUrl}") Visit
+                a.btn.btn-danger(onclick="removeData('#{data._id}')", href='#') Remove
+
+
       .row.marketing
         .col-lg-6
           #dataResults
